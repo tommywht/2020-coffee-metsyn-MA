@@ -4,7 +4,7 @@ library(rms)
 library(readxl)
 
 # import dataset, make sure there are data for 0 consumption as referent group
-test <- read_excel("C:/Users/a1032/Desktop/ongoing projects/coffee systematic review and meta-analysis/dose response analysis/sexadj.xlsx")
+test <- read_excel("~/sexadj.xlsx")
 
 # calculate log OR and SE
 test <- test %>% mutate(logor = log(or),
@@ -41,7 +41,7 @@ with(predict(lin, order = TRUE, expo = TRUE), {
 ## not run
 
 # dose-response for males
-male <- read_excel("C:/Users/a1032/Desktop/ongoing projects/coffee systematic review and meta-analysis/dose response analysis/male.xlsx")
+male <- read_excel("~/male.xlsx")
 
 # calculate log OR and SE
 male <- male %>% mutate(logor = log(or),
@@ -64,10 +64,10 @@ with(predict(spl.male, newdata, expo = T), {
            lty = 2, col = "black")
 })
 
-write_excel_csv(spl.male.pred, path = "C:/Users/a1032/Desktop/ongoing projects/coffee systematic review and meta-analysis/dose response analysis/male pred.csv")
+write_excel_csv(spl.male.pred, path = "~/male pred.csv")
 
 # dose-response for females
-female <- read_excel("C:/Users/a1032/Desktop/ongoing projects/coffee systematic review and meta-analysis/dose response analysis/female.xlsx")
+female <- read_excel("~/female.xlsx")
 
 # calculate log OR and SE
 female <- female %>% mutate(logor = log(or),
@@ -90,4 +90,4 @@ with(predict(spl.female, newdata, expo = T), {
            lty = 2, col = "black")
 })
 
-write_excel_csv(spl.female.pred, path = "C:/Users/a1032/Desktop/ongoing projects/coffee systematic review and meta-analysis/dose response analysis/female pred.csv")
+write_excel_csv(spl.female.pred, path = "~/female pred.csv")
